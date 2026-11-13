@@ -1,0 +1,129 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+}
+
+/* Основной контейнер */
+.container {
+    width: 100%;
+    max-width: 314px;
+    margin: 0 auto;
+    padding: 8px 0;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #fff 0px,
+            #fff 10px,
+            #fce4e6 10px,
+            #fce4e6 19px
+        );
+}
+
+h1 {
+    font-size: 20px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    color: #160909;
+}
+
+h2 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.advantages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.advantage {
+    background: white;
+    overflow: hidden;
+}
+
+.advantage img {
+    width: 100%;
+    height: 103px;
+    object-fit: cover;
+    display: block;
+}
+
+.advantage p {
+    font-size: 8px;
+    font-weight: bold;
+    padding: 5px 2px;
+    min-height: 34px;
+}
+
+/* Заголовок каталога */
+.catalog-title {
+    font-size: 21px;
+    line-height: 1.1;
+    margin: 18px 2px 7px;
+}
+
+/* Карточки товаров */
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px 23px;
+    padding: 0 2px;
+}
+
+.product {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.product img {
+    width: 100%;
+    height: 114px;
+    object-fit: cover;
+    display: block;
+}
+
+.product h3 {
+    font-size: 8px;
+    margin-top: 3px;
+}
+
+.product p {
+    font-size: 7px;
+    margin-bottom: 4px;
+}
+
+/* Кнопки */
+.product button {
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    background: #30204e;
+    color: white;
+    font-size: 7px;
+    padding: 4px 1px;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+
+.product .more {
+    background: transparent;
+    border: 1px solid #30204e;
+    color: #30204e;
+    padding: 3px 1px;
+}
+
+/* Адаптация под телефон */
+@media (max-width: 350px) {
+    .container {
+        max-width: 100%;
+    }
+}
