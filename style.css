@@ -1,129 +1,417 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --blue: #172e66;
+    --red: #f04444;
+    --white: #ffffff;
+    --light: #f7f7f7;
+    --text: #171717;
+    --muted: #666666;
+    --container: 1140px;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: white;
-}
-
-/* Основной контейнер */
-.container {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    max-width: 314px;
-    margin: 0 auto;
-    padding: 8px 0;
-
-    background:
-        repeating-linear-gradient(
-            90deg,
-            #fff 0px,
-            #fff 10px,
-            #fce4e6 10px,
-            #fce4e6 19px
-        );
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-h1 {
-    font-size: 20px;
-    line-height: 1.1;
-    margin-bottom: 14px;
-    color: #160909;
+img {
+    max-width: 100%;
 }
 
-h2 {
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+main > div,
+main > section {
+    width: 100%;
+    padding: 64px 24px;
+}
+
+.header {
+    width: 100%;
+    min-height: 76px;
+    padding: 12px max(24px, calc((100% - var(--container)) / 2));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    background: var(--white);
+    border-bottom: 1px solid #eeeeee;
+}
+
+.header__logo {
+    color: var(--blue);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.header__links,
+.header__user {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.header__links a,
+.header__user a {
     font-size: 14px;
-    margin-bottom: 5px;
+    font-weight: 500;
 }
 
-.advantages {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5px;
-}
-
-.advantage {
-    background: white;
-    overflow: hidden;
-}
-
-.advantage img {
+.first {
+    min-height: 560px;
     width: 100%;
-    height: 103px;
-    object-fit: cover;
-    display: block;
-}
 
-.advantage p {
-    font-size: 8px;
-    font-weight: bold;
-    padding: 5px 2px;
-    min-height: 34px;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 
-/* Заголовок каталога */
-.catalog-title {
-    font-size: 21px;
-    line-height: 1.1;
-    margin: 18px 2px 7px;
-}
+    padding: 90px max(24px, calc((100% - 1140px) / 2));
 
-/* Карточки товаров */
-.products {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px 23px;
-    padding: 0 2px;
-}
-
-.product {
-    min-width: 0;
-    overflow: hidden;
-}
-
-.product img {
-    width: 100%;
-    height: 114px;
-    object-fit: cover;
-    display: block;
-}
-
-.product h3 {
-    font-size: 8px;
-    margin-top: 3px;
-}
-
-.product p {
-    font-size: 7px;
-    margin-bottom: 4px;
-}
-
-/* Кнопки */
-.product button {
-    width: 100%;
-    border: none;
-    border-radius: 15px;
-    background: #30204e;
     color: white;
-    font-size: 7px;
-    padding: 4px 1px;
-    margin-bottom: 3px;
-    cursor: pointer;
+
+    background-image:
+        linear-gradient(
+            rgba(23, 46, 102, 0.65),
+            rgba(23, 46, 102, 0.65)
+        ),
+        url("photo/mainPhoto.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.product .more {
-    background: transparent;
-    border: 1px solid #30204e;
-    color: #30204e;
-    padding: 3px 1px;
+.first h1 {
+    max-width: 650px;
+    margin: 0 0 20px;
+    font-size: 52px;
+    line-height: 1.12;
+    font-weight: 700;
 }
 
-/* Адаптация под телефон */
-@media (max-width: 350px) {
-    .container {
+.first h3 {
+    margin: 0 0 20px;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.first p {
+    max-width: 540px;
+    margin: 0 0 25px;
+    font-size: 16px;
+}
+
+.first__button {
+    display: inline-block;
+    padding: 13px 25px;
+    background: var(--red);
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.second {
+    max-width: var(--container);
+    margin: 0 auto;
+    background: var(--white);
+}
+
+.second h2 {
+    max-width: 750px;
+    margin: 0 0 30px;
+    color: var(--text);
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.second__button {
+    display: inline-block;
+    padding: 12px 22px;
+    color: var(--white);
+    background: var(--red);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.third {
+    background: var(--white);
+}
+
+.third > h1 {
+    max-width: var(--container);
+    margin: 0 auto 12px;
+    color: var(--text);
+    font-size: 34px;
+}
+
+.third > h3 {
+    max-width: var(--container);
+    margin: 0 auto 28px;
+    color: var(--muted);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.third__advantages {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.third__item {
+    min-width: 0;
+    background: var(--light);
+    overflow: hidden;
+}
+
+.third__item img {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.third__item p {
+    margin: 0;
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.fourth {
+    background: var(--white);
+}
+
+.fourth > h1 {
+    max-width: var(--container);
+    margin: 0 auto 28px;
+    color: var(--text);
+    font-size: 34px;
+}
+
+.fourth__products {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.fourth__product {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    overflow: hidden;
+}
+
+.fourth__product img {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}
+
+.fourth__product h3 {
+    margin: 10px 0 5px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.fourth__product p {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.fourth__calculate {
+    display: block;
+    margin: 5px 0;
+    padding: 10px 12px;
+    text-align: center;
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.fourth__more {
+    display: block;
+    margin: 5px 0;
+    padding: 9px 12px;
+    text-align: center;
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.five {
+    background: var(--white);
+    color: var(--text);
+}
+
+.five h1 {
+    max-width: var(--container);
+    margin: 0 auto 12px;
+    font-size: 34px;
+}
+
+.five h3 {
+    max-width: var(--container);
+    margin: 0 auto 25px;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.five h4 {
+    max-width: var(--container);
+    margin: 0 auto 12px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.six {
+    background: var(--white);
+}
+
+.six h1 {
+    max-width: var(--container);
+    margin: 0 auto 25px;
+    font-size: 34px;
+}
+
+.six h3 {
+    max-width: var(--container);
+    margin: 0 auto 8px;
+    padding: 12px 16px;
+    background: #f0f0f0;
+    border-left: 3px solid var(--red);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.seven {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.seven h1 {
+    max-width: var(--container);
+    margin: 0 auto 28px;
+    color: var(--white);
+    font-size: 34px;
+}
+
+.seven__box {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.seven__box--text {
+    padding: 25px 18px;
+    text-align: center;
+    background: rgba(10, 25, 65, .35);
+    color: var(--white);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+footer {
+    padding: 40px 24px;
+    background: var(--white);
+    color: var(--text);
+}
+
+@media (max-width: 768px) {
+
+    main > div,
+    main > section {
+        padding: 40px 20px;
+    }
+
+    .header {
+        padding: 15px 20px;
+        gap: 14px;
+    }
+
+    .header__links {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+
+    .header__user {
+        margin-left: auto;
+    }
+
+    .first {
+        min-height: 430px;
+        padding: 55px 20px;
+        background-position: center;
+    }
+
+    .first h1 {
         max-width: 100%;
+        font-size: 36px;
+    }
+
+    .first h3 {
+        font-size: 18px;
+    }
+
+    .second h2 {
+        font-size: 25px;
+    }
+
+    .third > h1,
+    .fourth > h1,
+    .five h1,
+    .six h1,
+    .seven h1 {
+        font-size: 28px;
+    }
+
+    .third__advantages {
+        gap: 14px;
+    }
+
+    .third__item img {
+        height: 190px;
+    }
+
+    .fourth__products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 14px;
+    }
+
+    .fourth__product img {
+        height: 210px;
+    }
+
+    .seven__box {
+        gap: 12px;
     }
 }
+
