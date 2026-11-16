@@ -122,27 +122,80 @@ main > section {
 }
 
 .second {
-    max-width: var(--container);
-    margin: 0 auto;
-    background: var(--white);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 90px max(24px, calc((100% - 1140px) / 2));
+    background: #FFFFFF;
 }
 
+/* Заголовок */
 .second h2 {
-    max-width: 750px;
-    margin: 0 0 30px;
-    color: var(--text);
-    font-size: 30px;
-    line-height: 1.2;
+    max-width: 1140px;
+    margin: 0 auto 45px;
+    color: #172E66;
+    font-size: 34px;
+    font-weight: 700;
+    text-align: center;
 }
+
+.second__advantages {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.second__item {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 50px;
+    align-items: center;
+
+    padding: 25px 0;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.second__item h3 {
+    margin: 0;
+    color: #172E66;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.second__item p {
+    margin: 0;
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Мобильная версия
+@media (max-width: 600px) {
+    .second__item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    .second__item h3 {
+        font-size: 18px;
+    }
+} */
 
 .second__button {
-    display: inline-block;
-    padding: 12px 22px;
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    padding: 13px 25px;
+
     color: var(--white);
     background: var(--red);
     border-radius: 4px;
     font-size: 14px;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .third {
@@ -301,8 +354,7 @@ main > section {
     max-width: var(--container);
     margin: 0 auto 8px;
     padding: 12px 16px;
-    background: #f0f0f0;
-    border-left: 3px solid var(--red);
+    background: #55555563;
     font-size: 15px;
     font-weight: 500;
 }
@@ -383,6 +435,19 @@ footer {
 
     .second h2 {
         font-size: 25px;
+    }
+
+    .second {
+        padding: 40px 20px;
+    }
+
+    .second h2 {
+        font-size: 28px;
+    }
+
+    .second__advantages {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .third > h1,
