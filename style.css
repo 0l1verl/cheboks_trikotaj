@@ -128,7 +128,6 @@ main > section {
     background: #FFFFFF;
 }
 
-/* Заголовок */
 .second h2 {
     max-width: 1140px;
     margin: 0 auto 45px;
@@ -170,19 +169,6 @@ main > section {
     font-size: 16px;
     line-height: 1.6;
 }
-
-/* Мобильная версия
-@media (max-width: 600px) {
-    .second__item {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        padding: 20px 0;
-    }
-
-    .second__item h3 {
-        font-size: 18px;
-    }
-} */
 
 .second__button {
     display: block;
